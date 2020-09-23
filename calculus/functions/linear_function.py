@@ -1,26 +1,21 @@
 import numpy as np
 from function import function
 
-
-class linear_function(function):
-    '''
-    A linear function is a function in form of
-    f(x)=AX
-    where X = [X, X**2, X**3]
-    '''
-
+class linear_function:
     def __init__(self, param: np.ndarray, constant: float):
         self._param: np.ndarray = param
 
-    def gradient(self, x: np.ndarray) -> float:
+    def gradient(self, x: np.ndarray):
         retval = []
         const = sum(self._param[0])
         # for each variable in x
-        for x_i in range(self._param[])
-        # for each power layer
-
-        for i in range(self.power()):
-            retval.append(self._param[i])
+        for i in range(self._param[0]):
+            # for each power layer
+            retval.append(0)
+            for j in range(self.power()):
+                retval[i] += self._param[i][j]*j*x[i]**(j-1)
+        return np.array(retval)
+                
 
     def grad_func(self):
         return None
